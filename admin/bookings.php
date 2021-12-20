@@ -8,10 +8,8 @@
     <title>Admin</title>
     <link rel="icon" type="image/png" href="../img/logo.png">
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    
 </head>
 
 <body>
@@ -37,8 +35,8 @@
     <div class="admin-container">
         <div class="admin-section admin-section1 ">
             <ul>
-                <a href="admin.php"><li class="active-menu"><i class="fas fa-sliders-h"></i>Dashboard</li></a>
-                <a href="bookings.php"><li><i class="fas fa-ticket-alt"></i>Bookings </i></li></a>
+                <a href="admin.php"><li><i class="fas fa-sliders-h"></i>Dashboard</li></a>
+                <a href="bookings.php"><li class="active-menu"><i class="fas fa-ticket-alt"></i>Bookings </i></li></a>
                 <li class="admin-navigation-schedule"><i class="fas fa-calendar-alt"></i>Schedule 
                 </li>
                 <ul class="admin-navigation-schedule-dropdwn hidden-div">
@@ -52,8 +50,8 @@
         </div>
         <div class="admin-section admin-section2">
             <div class="admin-section-column">
-                <div class="admin-section-panel admin-section-stats">
-                    <div class="admin-section-stats-panel">
+                <!-- <div class="admin-section-panel admin-section-stats"> -->
+                    <!-- <div class="admin-section-stats-panel">
                         <i class="fas fa-ticket-alt" style="background-color: #cf4545"></i>
                         <h2 style="color: #cf4545"><?php echo $bookingsNo ?></h2>
                         <h3>Bookings</h3>
@@ -62,7 +60,7 @@
                         <i class="fas fa-film" style="background-color: #4547cf"></i>
                         <h2 style="color: #4547cf"><?php echo $moviesNo ?></h2>
                         <h3>Movies</h3>
-                    </div>
+                    </div> -->
                     <!-- <div class="admin-section-stats-panel">
                         <i class="fas fa-ticket-alt" style="background-color: #bb3c95"></i>
                         <h2 style="color: #bb3c95">dummy</h2>
@@ -73,11 +71,10 @@
                         <h2 style="color: #3cbb6c"><?php echo $messagesNo ?></h2>
                         <h3>Messages</h3>
                     </div> -->
-                </div>
-                <!-- <div class="admin-section-panel admin-section-panel1">
+                <!-- </div> -->
+                <div class="admin-section-panel admin-section-panel1">
                     <div class="admin-panel-section-header">
                         <h2>Bookings</h2>
-                        <i class="fas fa-ticket-alt" style="background-color: #cf4545"></i>
                     </div>
                     <div class="admin-panel-section-content">
                         <?php
@@ -117,7 +114,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="admin-section-panel admin-section-panel2">
+                <!-- <div class="admin-section-panel admin-section-panel2">
                     <div class="admin-panel-section-header">
                         <h2>Movies</h2>
                         <i class="fas fa-film" style="background-color: #4547cf"></i>
@@ -174,7 +171,6 @@
     <script src="../scripts/jquery-3.3.1.min.js "></script>
     <script src="../scripts/owl.carousel.min.js "></script>
     <script src="../scripts/script.js "></script>
-    
 </body>
 
 </html>

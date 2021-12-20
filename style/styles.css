@@ -1,6 +1,6 @@
     @import url('https://fonts.googleapis.com/css?family=Lato');
     @import url('https://fonts.googleapis.com/css?family=Lobster');
-
+    
     * {
         margin: 0;
         padding: 0;
@@ -714,20 +714,29 @@
         color: #FFF;
         width: 100%;
         background-color: #3a3a3a;
-        display: grid;
-        grid-template-columns: 1fr 5fr;
+        /* display: grid;
+        grid-template-columns: 1fr 5fr; */
+        display: flex;
+        justify-content: center;
+
     }
 
     .admin-user-avatar {
         width: 65px;
+        border-radius: 50px;
     }
 
     .admin-login-info {
+        background-color: #22aed8;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        padding-left: 12px;
     }
-
+    .admin-login-info a{
+        color: white !important;
+        
+    }
     .admin-login-info i {
         margin: 0 10px;
         cursor: pointer;
@@ -792,32 +801,38 @@
     }
 
     .admin-logo {
-        padding: 20px 10px;
-        background-color: #5f5f5f;
+        padding: 20px 500px;
+        background-color: #a6ceda;
+        flex: 1;
+        font-size: 2rem;
     }
 
     .admin-container {
         display: grid;
         grid-template-columns: 1fr 5fr;
+        height: 100vh;
     }
 
     .admin-section1 {
-        background-color: #3a3a3a;
+        background-color: #a6ceda;
         height: 100%;
     }
 
     .admin-section1 ul li {
-        width: 100%;
-        padding: 20px 10px;
-        background-color: #3a3a3a;
-        color: #FFF;
+        list-style: none;
+        color: black;
         transition: all 0.3s ease;
         position: relative;
         cursor: pointer;
+        border: 1px solid white;
+        padding: 10px 20px;
+        background-color: white;
+        margin: 20px 20px;
+        border-radius: 10px;
     }
 
     .admin-section1 ul li:hover {
-        background-color: #6e5a11;
+        background-color: lightblue;
         color: #fff;
         border-left: #fff 3px solid;
     }
@@ -826,7 +841,7 @@
         background-color: #4e4e4e;
         margin-bottom: 1px;
     }
-
+    
     .admin-section1 ul ul li {
         background-color: #4e4e4e;
         margin-bottom: 1px;
@@ -840,6 +855,7 @@
         display: flex;
         flex-wrap: wrap;
         padding: 0 4px;
+        background-color: #57bad8;
     }
 
     .admin-section-column {
@@ -982,10 +998,10 @@
 
     .admin-section-panel2 form {
 
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        align-items: center;
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+        /* flex-wrap: wrap; */
+        /* align-items: center; */
     }
 
     .admin-section-panel2 form input {
@@ -995,6 +1011,8 @@
         width: 32%;
         height: 42px;
         margin: 5px 0;
+        display: block;
+        margin-bottom: 16px;
     }
 
     .admin-section-panel2 form input[type="file"] {
@@ -1008,7 +1026,7 @@
         padding: 10px;
         width: 49%;
         text-align: center;
-        background-color: #a3861e;
+        background-color: lightblue;
         color: #FFF;
         transition: all 0.7s ease;
         cursor: pointer;
@@ -1038,4 +1056,12 @@
     .show {
         display: block;
         transition: all 0.7s ease;
+    }
+
+    .active-menu{
+        background-color: lightblue !important;
+    }
+
+    td{
+        padding: 10px ;
     }
