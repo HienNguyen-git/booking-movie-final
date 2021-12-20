@@ -11,7 +11,6 @@
     }
 
     /* Header Styling */
-
     #home-section-2,
     #home-section-3 {
         margin: 100px 0;
@@ -21,37 +20,34 @@
         z-index: 1000;
     }
 
-    .navbar-brand {
-        height: 20em;
+    .header-container{
+        display: flex;
+        height: 10rem;
         overflow: hidden;
+        background-color: #6e5a11;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 2rem;
     }
 
-    .navbar-brand:before {
-        content: '';
-        display: block;
-        position: relative;
-        top: -195%;
-        left: -25%;
-        height: 219%;
-        width: 200%;
-        background: lightblue;
-        box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.1);
-        transform: rotateZ(-6deg) skew(-6deg);
+    .navbar-brand {
     }
 
     .navbar-brand .navbar-heading {
-        position: absolute;
+        flex: 1;
         top: 4vmax;
         left: 2vmax;
         padding: 0;
         margin: 0;
         color: #fff;
+        display: block;
         font-size: 7em;
         font-family: 'Lobster', cursive;
-        transform: rotateZ(-6deg);
         text-shadow: 2px 2px 0px lightblue, 4px 4px 0px lightblue, 6px 6px 0px lightblue, 8px 8px 0px lightblue, 10px 10px 0px lightblue;
     }
-
+    .navbar-brand .navbar-container{
+        flex: 1;
+    }
     nav {
         display: flex;
         align-items: center;
@@ -78,11 +74,12 @@
 
     .navbar ul li:hover {
         cursor: pointer;
-        background-color: #aa964c;
+        background-color: lightblue;
     }
 
     .navbar ul li:hover>a {
-        color: #b6b6b6;
+        color: #000;
+        /* color: #b6b6b6; */
     }
 
     .navbar-menu li ul {
@@ -95,14 +92,13 @@
 
     .navbar-menu li a {
         display: block;
-        color: #969696;
+        color: #fff;
         text-align: center;
         padding: 12px 36px;
         text-decoration: none;
     }
 
     .navbar-container {
-        position: absolute;
         top: 8em;
         right: 1%;
     }
@@ -226,7 +222,7 @@
         width: 100%;
         opacity: 0;
         transition: .7s ease;
-        background-color: rgb(0, 0, 0);
+        background-color: #6e5a11;
     }
 
     .movie-box:hover .movie-info {
@@ -1018,6 +1014,18 @@
     .admin-section-panel2 form button:hover {
         background-color: #b6b6b6
     }
+    .book-ticket-btn-container{
+        position: relative;
+    }
+    .book-ticket-btn{
+        position: absolute;
+        background-color: #6e5a11;
+        border-radius: 50px;
+        color: #fff;
+        padding: 1rem;
+        left: 47%;
+    }
+
 
     /* Responsive Properties */
 

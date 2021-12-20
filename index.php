@@ -9,7 +9,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Mlem Cinema</title>
     </head>
-
+    <link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
 <body>
     <?php
     $link = mysqli_connect("localhost", "root", "", "cinema_db");
@@ -30,7 +30,7 @@
                             echo '<img src="'. $row['movieImg'] .'" alt=" ">';
                             echo '<div class="movie-info ">';
                             echo '<h3>'. $row['movieTitle'] .'</h3>';
-                            echo '<a href="booking.php?id='.$row['movieID'].'"><i class="fas fa-ticket-alt"></i> Book a seat</a>';
+                            echo '<a href="viewdetail.php?id='.$row['movieID'].'"><i class="fas fa-eye"></i> View detail</a>';
                             echo '</div>';
                             echo '</div>';
                         }
