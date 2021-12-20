@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
     <link rel="icon" type="image/png" href="../img/logo.png">
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/styles2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -72,7 +72,7 @@
                         <h3>Messages</h3>
                     </div> -->
                 <!-- </div> -->
-                <div class="admin-section-panel admin-section-panel1">
+                <div class="admin-section-panel admin-section-panel2">
                     <div class="admin-panel-section-header">
                         <h2>Bookings</h2>
                     </div>
