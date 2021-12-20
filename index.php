@@ -15,10 +15,11 @@
     <?php
     $link = mysqli_connect("localhost", "root", "", "cinema_db");
     $sql = "SELECT * FROM movieTable";
+    $sql2 = "SELECT * FROM movieTable";
     ?>
     <header></header>
-    <div id="home-section-1" class="movie-show-container">
-        <h1>Currently Showing</h1>
+    <section id="home-section-1" class="movie-show-container">
+        <h1>Recommend for you</h1>
         <h3>Book a movie now</h3>
 
         <div class="movies-container">
@@ -31,7 +32,10 @@
                             echo '<img src="'. $row['movieImg'] .'" alt=" ">';
                             echo '<div class="movie-info ">';
                             echo '<h3>'. $row['movieTitle'] .'</h3>';
-                            echo '<a href="viewdetail.php?id='.$row['movieID'].'"><i class="fas fa-eye"></i> View detail</a>';
+                            // echo '<div class="movie-btn">';
+                            echo '<a style="display: block;" href="viewdetail.php?id='.$row['movieID'].'"><i class="fas fa-eye"></i> View detail</a>';
+                            echo '<a style="display: block;" href="booking.php?id='.$row['movieID'].'"><i class="fas fa-ticket-alt"></i> Book now</a>';
+                            // echo '</div>';
                             echo '</div>';
                             echo '</div>';
                         }
@@ -42,60 +46,66 @@
                 } else{
                     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                 }
-                
                 // Close connection
                 mysqli_close($link);
             ?>
         </div>
-    </div>
-    <div id="home-section-3" class="trailers-section">
-        <h1 class="section-title">Explore new movies</h1>
-        <h3>Now showing</h3>
-        <div class="trailers-grid">
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-1.jpg" alt="">
-                <div class="trailer-item-info" data-video="Z1BCujX3pw8">
-                    <h3>Captain Marvel</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+    </section>
+
+    <section id="home-section-2" class="movie-show-container-hot">
+        <h1>Hot movie</h1>
+        <h3>Choose your favorite movie</h3>
+
+        <div class="movies-container">
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-2.jpg" alt="">
-                <div class="trailer-item-info" data-video="OPEfsEaFv_c">
-                    <h3>Karmat Bytmrmt</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-3.jpg" alt="">
-                <div class="trailer-item-info" data-video="cksYkEzUa7k">
-                    <h3>The Lego Movie</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-4.jpg" alt="">
-                <div class="trailer-item-info" data-video="Ze5YA4mkzhI">
-                    <h3>Secret Men Club</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-5.jpg" alt="">
-                <div class="trailer-item-info" data-video="lbUAVTc7NTo">
-                    <h3>VICE</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
-            <div class="trailers-grid-item">
-                <img src="img/movie-thumb-6.jpg" alt="">
-                <div class="trailer-item-info" data-video="RyFlfN4dD14">
-                    <h3>The Vanishing</h3>
-                    <i class="far fa-3x fa-play-circle"></i>
+            <div class="movie-box">
+                <img src="img/movie-poster-1.jpg" alt=" " />
+                <div class="movie-info">
+                <h3>Captain Marvel</h3>
+                <a href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
                 </div>
             </div>
+            <?php
+            
+            ?>
         </div>
-    </div>
+    </section>
+
+    
     <footer></footer>
 
     <script src="scripts/jquery-3.3.1.min.js "></script>

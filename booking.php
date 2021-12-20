@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
+        session_start();
+        if (!isset($_SESSION['user'])) {
+            header('Location: login.php');
+            exit();
+        }
         $id = $_GET['id'];
         $link = mysqli_connect("localhost", "root", "", "cinema_db");
 
@@ -20,7 +25,7 @@
     <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 
-<body style="background-color:#6e5a11;">
+<body style="background-color:lightblue;">
     <div class="booking-panel">
         <div class="booking-panel-section booking-panel-section1">
             <h1>MOVIE DETAIL</h1>

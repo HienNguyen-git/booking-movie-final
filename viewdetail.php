@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 
-<body style="background-color:#6e5a11;">
+<body style="background-color:lightblue;">
     <div class="booking-panel">
         <div class="booking-panel-section booking-panel-section1">
             <h1>MOVIE DETAIL</h1>
