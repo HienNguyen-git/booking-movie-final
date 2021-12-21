@@ -24,6 +24,7 @@
             background: #eceb7b;
         }
     </style>
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
 <?php
@@ -87,38 +88,35 @@
         }
     }
 ?>
-    <div class="container">
+    <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 border my-5 p-4 rounded mx-3">
-                <h3 class="text-center text-secondary mt-2 mb-3 mb-3">Create a new account</h3>
+                <h1 class="text-center text-secondary mt-2 mb-3 mb-3">Create a new account</h1>
                 <form method="post" action="" novalidate>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="firstname">First name</label>
+                        <div class="custom-form col-md-6">
                             <input value="<?= $first_name?>" name="first" required class="form-control" type="text" placeholder="First name" id="firstname">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="lastname">Last name</label>
+                        <div class="custom-form col-md-6">
                             <input value="<?= $last_name?>" name="last" required class="form-control" type="text" placeholder="Last name" id="lastname">
                             <div class="invalid-tooltip">Last name is required</div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
+                    <div class="custom-form">
+                        
                         <input value="<?= $email?>" name="email" required class="form-control" type="email" placeholder="Email" id="email">
                     </div>
-                    <div class="form-group">
-                        <label for="user">Username</label>
+                    <div class="custom-form">
+                        
                         <input value="<?= $user?>" name="user" required class="form-control" type="text" placeholder="Username" id="user">
                         <div class="invalid-feedback">Please enter your username</div>
                     </div>
-                    <div class="form-group">
-                        <label for="pass">Password</label>
+                    <div class="custom-form">
+                        
                         <input  value="<?= $pass?>" name="pass" required class="form-control" type="password" placeholder="Password" id="pass">
                         <div class="invalid-feedback">Password is not valid.</div>
                     </div>
-                    <div class="form-group">
-                        <label for="pass2">Confirm Password</label>
+                    <div class="custom-form">
                         <input value="<?= $pass_confirm?>" name="pass-confirm" required class="form-control" type="password" placeholder="Confirm Password" id="pass2">
                         <div class="invalid-feedback">Password is not valid.</div>
                     </div>
