@@ -66,7 +66,7 @@
         }else return false;
     }
 
-    function register($user,$pass,$first,$last,$email){
+    function register($user,$pass,$first,$last,$email,$phone){
         if(is_email_exist($email)){
             return array('code'=>1,'error'=>'Email exists');
         }
@@ -74,11 +74,11 @@
         $hash = password_hash($pass, PASSWORD_DEFAULT);
         $rand = random_int(0,1000);
         $token = md5($user.'+'.$rand);
-        $sql = 'insert into account(username, firstname, lastname, email, password, activate_token) values(?,?,?,?,?,?)';
+        $sql = 'insert into account(username, firstname, lastname, email, sdt, password, activate_token) values(?,?,?,?,?,?,?)';
         
         $conn = open_database();
         $stm = $conn->prepare($sql);
-        $stm->bind_param('ssssss', $user,$first,$last,$email,$hash,$token);
+        $stm->bind_param('sssssss', $user,$first,$last,$email,$phone,$hash,$token);
 
         if(!$stm->execute()){
             return array('code'=>2,'error'=>'Command not execute');

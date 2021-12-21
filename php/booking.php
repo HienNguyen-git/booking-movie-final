@@ -8,7 +8,6 @@ if(isset($_POST['submit']))
         $link = new mysqli($servername, $username, $password, $dbName);
         $sql = "INSERT INTO bookingTable (  movieName,
                                             bookingTheatre,
-                                            bookingType,
                                             bookingDate,
                                             bookingTime,
                                             bookingFName,
@@ -16,7 +15,6 @@ if(isset($_POST['submit']))
                                             bookingPNumber)
                 VALUES ('".$_POST["theatre"]."',
                         '".$_POST["theatre"]."',
-                        '".$_POST["type"]."',
                         '".$_POST["date"]."',
                         '".$_POST["hour"]."',
                         '".$_POST["fName"]."',

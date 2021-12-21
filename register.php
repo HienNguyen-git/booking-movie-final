@@ -45,6 +45,7 @@
         $email = $_POST['email'];
         $user = $_POST['user'];
         $pass = $_POST['pass'];
+        $phone = $_POST['phone'];
         $pass_confirm = $_POST['pass-confirm'];
 
         if (empty($first_name)) {
@@ -74,7 +75,7 @@
         else {
             // register a new account
 
-            $result = register($user,$pass,$first_name,$last_name,$email);
+            $result = register($user,$pass,$first_name,$last_name,$email,$phone);
             
             if ($result['code']==0){
                 $success = 'Register successful';
@@ -103,8 +104,10 @@
                         </div>
                     </div>
                     <div class="custom-form">
-                        
                         <input value="<?= $email?>" name="email" required class="form-control" type="email" placeholder="Email" id="email">
+                    </div>
+                    <div class="custom-form">
+                        <input value="<?= $phone?>" name="phone" required class="form-control" type="email" placeholder="Phone number" id="phone">
                     </div>
                     <div class="custom-form">
                         
@@ -112,7 +115,6 @@
                         <div class="invalid-feedback">Please enter your username</div>
                     </div>
                     <div class="custom-form">
-                        
                         <input  value="<?= $pass?>" name="pass" required class="form-control" type="password" placeholder="Password" id="pass">
                         <div class="invalid-feedback">Password is not valid.</div>
                     </div>

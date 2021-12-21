@@ -21,15 +21,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style/login.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container custom-container">
       <div class="row">
         <div class="col-md-6 mt-5 mx-auto p-3 border rounded">
             <h4>Đăng xuất thành công</h4>
             <p>Tài khoản của bạn đã được đăng xuất khỏi hệ thống.</p>
             <p>Nhấn <a href="./">vào đây</a> để trở về trang chủ, hoặc trang web sẽ tự động chuyển hướng đăng nhập sau <span id="counter" class="text-danger">5</span> giây nữa.</p>
-            <a class="btn btn-success px-5" href="login.php">Đăng nhập</a>
+            <a class="btn btn-success px-5 text-light" href="login.php">Đăng nhập</a>
         </div>
       </div>
     </div>

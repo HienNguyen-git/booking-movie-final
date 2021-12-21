@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
         session_start();
-        
+        $user = $_SESSION['user'];
         $id = $_GET['id'];
         $_SESSION['bookingID'] = $id;
         if (!isset($_SESSION['user'])) {
@@ -14,6 +14,18 @@
         $movieQuery = "SELECT * FROM movieTable WHERE movieID = $id"; 
         $movieImageById = mysqli_query($link,$movieQuery);
         $row = mysqli_fetch_array($movieImageById);
+
+
+        $link2 = mysqli_connect("localhost", "root", "", "cinema_db");
+        $sql = "SELECT * FROM account where username='$user'";
+        $result = mysqli_fetch_assoc(mysqli_query($link2, $sql));
+        // print_r($result);
+        print_r($result);
+        $username = $result['username'];
+        $firstname = $result['firstname'];
+        $lastname = $result['lastname'];
+        $email = $result['email'];
+        $sdt = $result['sdt'];
 ?>
 
 <head>
@@ -96,14 +108,21 @@
                         <option value="21-00">09:00 PM</option>
                         <option value="24-00">12:00 PM</option>
                     </select>
+
+                    <input type="hidden" value="<?=$firstname?>" name="fName">
+
+                    <input type="hidden" value="<?=$lastname?>" name="lName">
+
+                    <input type="hidden" value="<?=$sdt?>" name="pNumber">
+
                     <button type="submit" value="submit" name="submit" class="form-btn">Book a Seat</button>
                     <?php
                     $fNameErr = $pNumberErr= "";
                     $fName = $pNumber = "";
             
                     if(isset($_POST['submit'])){
-                     
-            
+                        
+                        
                         $fName = $_POST['fName'];
                         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $fName)) {
                             $fNameErr = 'Name can only contain letters, numbers and white spaces';
@@ -119,7 +138,6 @@
                         $insert_query = "INSERT INTO 
                         bookingTable (  movieName,
                                         bookingTheatre,
-                                        bookingType,
                                         bookingDate,
                                         bookingTime,
                                         bookingFName,
@@ -127,7 +145,6 @@
                                         bookingPNumber)
                         VALUES (        '".$row['movieTitle']."',
                                         '".$_POST["theatre"]."',
-                                        '".$_POST["type"]."',
                                         '".$_POST["date"]."',
                                         '".$_POST["hour"]."',
                                         '".$_POST["fName"]."',

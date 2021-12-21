@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cinema_db`
 --
-
+CREATE DATABASE IF NOT EXISTS `cinema_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `cinema_db`;
 -- --------------------------------------------------------
 
 --
@@ -30,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `bookingTable` (
   `bookingID` int(11) NOT NULL,
   `movieName` varchar(100) DEFAULT NULL,
   `bookingTheatre` varchar(100) NOT NULL,
-  `bookingType` varchar(100) DEFAULT NULL,
   `bookingDate` varchar(50) NOT NULL,
   `bookingTime` varchar(50) NOT NULL,
   `bookingFName` varchar(100) NOT NULL,
@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `bookingTable` (
 -- Dumping data for table `bookingTable`
 --
 
-INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `bookingType`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`) VALUES
-(19, 'Captain Marvel', 'main-hall', '3d', '13-3', '15-00', 'Ahmed', 'Ismael', '010152658930'),
-(22, 'The Lego Movie', 'vip-hall', 'imax', '13-3', '18-00', 'Kareem', 'Ahmed', '01589965');
+INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`) VALUES
+(19, 'Captain Marvel', 'main-hall', '13-3', '15-00', 'Ahmed', 'Ismael', '010152658930'),
+(22, 'The Lego Movie', 'vip-hall', '13-3', '18-00', 'Kareem', 'Ahmed', '01589965');
 
 -- --------------------------------------------------------
 
