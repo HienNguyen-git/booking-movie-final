@@ -12,7 +12,7 @@
         <nav class="navbar">
             <ul class="navbar-menu">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="schedule.php">Your booking</a></li>
+                <li><a href="user_booking.php">Your booking</a></li>
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo "<li><a href='logout.php'>Logout</a></li>";

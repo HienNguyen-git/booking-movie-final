@@ -36,6 +36,7 @@
     $user = '';
     $pass = '';
     $pass_confirm = '';
+    $phone = '';
 
     if (isset($_POST['first']) && isset($_POST['last']) && isset($_POST['email'])
     && isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['pass-confirm']))

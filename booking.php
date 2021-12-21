@@ -20,7 +20,6 @@
         $sql = "SELECT * FROM account where username='$user'";
         $result = mysqli_fetch_assoc(mysqli_query($link2, $sql));
         // print_r($result);
-        print_r($result);
         $username = $result['username'];
         $firstname = $result['firstname'];
         $lastname = $result['lastname'];
