@@ -90,9 +90,11 @@ nav {
 
 .navbar-menu li a {
     display: block;
+
     color: #fff;
     text-align: center;
     padding: 12px 36px;
+    font-size: 24px;
     text-decoration: none;
 }
 
@@ -531,7 +533,7 @@ footer {
     padding: 10px;
     margin-top: 10px;
     float: right;
-    width: 25%;
+    width: 50%;
     text-align: center;
     background-color: rgb(128, 199, 223);
     color: #FFF;
@@ -543,7 +545,6 @@ footer {
 .booking-form-container form button:hover {
     background-color: #b6b6b6;
     color: #000;
-    
 }
 
 .booking-form-container form select {
@@ -564,15 +565,6 @@ footer {
     text-indent: 0.01px;
     text-overflow: '';
     width: 23%;
-    height: 42px;
-    margin: 5px 0;
-}
-
-.booking-form-container form input {
-    border-radius: 4px;
-    border: 1px solid #6e6e6e;
-    padding: 10px;
-    width: 31%;
     height: 42px;
     margin: 5px 0;
 }

@@ -78,14 +78,6 @@
                         <option value="private-hall">Private Hall</option>
                     </select>
 
-                    <select name="type" required>
-                        <option value="" disabled selected>TYPE</option>
-                        <option value="3d">3D</option>
-                        <option value="2d">2D</option>
-                        <option value="imax">IMAX</option>
-                        <option value="7d">7D</option>
-                    </select>
-
                     <select name="date" required>
                         <option value="" disabled selected>DATE</option>
                         <option value="12-3">March 12,2019</option>
@@ -104,13 +96,6 @@
                         <option value="21-00">09:00 PM</option>
                         <option value="24-00">12:00 PM</option>
                     </select>
-
-                    <input placeholder="First Name" type="text" name="fName" required>
-
-                    <input placeholder="Last Name" type="text" name="lName">
-
-                    <input placeholder="Phone Number" type="text" name="pNumber" required>
-
                     <button type="submit" value="submit" name="submit" class="form-btn">Book a Seat</button>
                     <?php
                     $fNameErr = $pNumberErr= "";

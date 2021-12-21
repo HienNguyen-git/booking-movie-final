@@ -82,6 +82,7 @@
         <div class="form-group">
             <p>Don't have an account yet? <a href="register.php">Register now</a>.</p>
             <p>Forgot your password? <a href="forgot.php">Reset your password</a>.</p>
+            <p>Return <a href="./">Home page</a>.</p>
         </div>
     </form>
 </div>
