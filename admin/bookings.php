@@ -13,21 +13,13 @@
 </head>
 
 <body>
-    <?php
-    $link = mysqli_connect("localhost", "root", "", "cinema_db");
-    $sql = "SELECT * FROM bookingTable";
-    $bookingsNo=mysqli_num_rows(mysqli_query($link, $sql));
-    $messagesNo=mysqli_num_rows(mysqli_query($link, "SELECT * FROM feedbackTable"));
-    $moviesNo=mysqli_num_rows(mysqli_query($link, "SELECT * FROM movieTable"));
-    ?>
+    
     <div class="admin-section-header">
         <div class="admin-logo">
             <i class="fas fa-video"></i>
             Mlem Cinema System
         </div>
         <div class="admin-login-info">
-            <!-- <i class="far fa-bell admin-notification-button"></i>
-            <i class="far fa-comment-alt"></i> -->
             <a href="#">Welcome, Admin</a>
             <img class="admin-user-avatar" src="../img/avatar.png" alt="">
         </div>
@@ -50,34 +42,14 @@
         </div>
         <div class="admin-section admin-section2">
             <div class="admin-section-column">
-                <!-- <div class="admin-section-panel admin-section-stats"> -->
-                    <!-- <div class="admin-section-stats-panel">
-                        <i class="fas fa-ticket-alt" style="background-color: #cf4545"></i>
-                        <h2 style="color: #cf4545"><?php echo $bookingsNo ?></h2>
-                        <h3>Bookings</h3>
-                    </div>
-                    <div class="admin-section-stats-panel">
-                        <i class="fas fa-film" style="background-color: #4547cf"></i>
-                        <h2 style="color: #4547cf"><?php echo $moviesNo ?></h2>
-                        <h3>Movies</h3>
-                    </div> -->
-                    <!-- <div class="admin-section-stats-panel">
-                        <i class="fas fa-ticket-alt" style="background-color: #bb3c95"></i>
-                        <h2 style="color: #bb3c95">dummy</h2>
-                        <h3>Dummy</h3>
-                    </div>
-                    <div class="admin-section-stats-panel" style="border: none">
-                        <i class="fas fa-envelope" style="background-color: #3cbb6c"></i>
-                        <h2 style="color: #3cbb6c"><?php echo $messagesNo ?></h2>
-                        <h3>Messages</h3>
-                    </div> -->
-                <!-- </div> -->
                 <div class="admin-section-panel admin-section-panel2">
                     <div class="admin-panel-section-header">
                         <h2>Bookings</h2>
                     </div>
                     <div class="admin-panel-section-content">
                         <?php
+                        $link = mysqli_connect("localhost", "root", "", "cinema_db");
+                        $sql = "SELECT * FROM bookingTable";
                         if($result = mysqli_query($link, $sql)){
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_array($result)){
@@ -114,57 +86,7 @@
                         ?>
                     </div>
                 </div>
-                <!-- <div class="admin-section-panel admin-section-panel2">
-                    <div class="admin-panel-section-header">
-                        <h2>Movies</h2>
-                        <i class="fas fa-film" style="background-color: #4547cf"></i>
-                    </div>
-                    <form action="" method="POST">
-                        <input placeholder="Title" type="text" name="movieTitle" required>
-                        <input placeholder="Genre" type="text" name="movieGenre" required>
-                        <input placeholder="Duration" type="number" name="movieDuration" required>
-                        <input placeholder="Release Date" type="date" name="movieRelDate" required>
-                        <input placeholder="Director" type="text" name="movieDirector" required>
-                        <input placeholder="Actors" type="text" name="movieActors" required>
-                        <input type="file" name="movieImg" accept="image/*">
-                        <button type="submit" value="submit" name="submit" class="form-btn">Add Movie</button>
-                        <?php
-                        if(isset($_POST['submit'])){
-                            $insert_query = "INSERT INTO 
-                            movieTable (  movieImg,
-                                            movieTitle,
-                                            movieGenre,
-                                            movieDuration,
-                                            movieRelDate,
-                                            movieDirector,
-                                            movieActors)
-                            VALUES (        'img/".$_POST['movieImg']."',
-                                            '".$_POST["movieTitle"]."',
-                                            '".$_POST["movieGenre"]."',
-                                            '".$_POST["movieDuration"]."',
-                                            '".$_POST["movieRelDate"]."',
-                                            '".$_POST["movieDirector"]."',
-                                            '".$_POST["movieActors"]."')";
-                            mysqli_query($link,$insert_query);}
-                        ?>
-                    </form>
-                </div> -->
             </div>
-            <!-- <div class="admin-section-column">
-                <div class="admin-section-panel admin-section-panel4">
-                    <div class="admin-panel-section-header">
-                        <h2>Schedule</h2>
-                        <i class="fas fa-clock" style="background-color: #3cbb6c"></i>
-                    </div>
-                </div>
-                <div class="admin-section-panel admin-section-panel5">
-                    <div class="admin-panel-section-header">
-                        <h2>To-do List</h2>
-                        <i class="fas fa-list-ol" style="background-color: #bb3c95"></i>
-                    </div>
-                    <div class="admin-panel-section-content"></div>
-                </div>
-            </div> -->
         </div>
     </div>
 
