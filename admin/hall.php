@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-
 </head>
 
 <body>
@@ -23,8 +21,6 @@
             Mlem Cinema System
         </div>
         <div class="admin-login-info">
-            <!-- <i class="far fa-bell admin-notification-button"></i>
-            <i class="far fa-comment-alt"></i> -->
             <a href="#">Welcome, Admin</a>
             <img class="admin-user-avatar" src="../img/avatar.png" alt="">
         </div>
