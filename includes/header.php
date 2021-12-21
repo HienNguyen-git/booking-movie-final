@@ -4,7 +4,7 @@
 
 <div class="header-container">
     <div class="navbar-brand">
-        <a href="index.php">
+        <a href="./">
             <h1 class="navbar-heading">Mlem Cinema</h1>
         </a>
     </div>

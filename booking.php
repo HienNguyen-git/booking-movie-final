@@ -2,11 +2,13 @@
 <html lang="en">
 <?php 
         session_start();
+        
+        $id = $_GET['id'];
+        $_SESSION['bookingID'] = $id;
         if (!isset($_SESSION['user'])) {
             header('Location: login.php');
             exit();
         }
-        $id = $_GET['id'];
         $link = mysqli_connect("localhost", "root", "", "cinema_db");
 
         $movieQuery = "SELECT * FROM movieTable WHERE movieID = $id"; 
