@@ -34,6 +34,7 @@ CREATE TABLE `account` (
   `firstname` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `activated` bit(1) DEFAULT (false),
   `activate_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
@@ -43,9 +44,9 @@ CREATE TABLE `account` (
 -- Đang đổ dữ liệu cho bảng `account`
 --
 
-INSERT INTO `account` (`username`, `firstname`, `lastname`, `email`, `password`, `activated`, `activate_token`) VALUES
-('mvmanh', 'Mai', 'Văn Mạnh', 'mvmanh@gmail.com', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456'),
-('tdt', 'Tôn', 'Đức Thắng', 'mvmanh@it.tdt.edu.vn', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456');
+INSERT INTO `account` (`username`, `firstname`, `lastname`, `email`,`sdt`, `password`, `activated`, `activate_token`) VALUES
+('mvmanh', 'Mai', 'Văn Mạnh', 'mvmanh@gmail.com','12345678911', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456'),
+('tdt', 'Tôn', 'Đức Thắng', 'mvmanh@it.tdt.edu.vn','12345678922', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456');
 
 -- --------------------------------------------------------
 
