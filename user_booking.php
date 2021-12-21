@@ -31,8 +31,8 @@
     ?>
     <header></header>
     <section class="account-info-container">
-    <h1>Hello <?=$firstname?> <?=$lastname?></h1>
-        <h3>Your account info</h3>
+    <h1>Your booking list</h1>
+        <h3>Here you are</h3>
         <div class="account-container">
             <table class="table table-bordered customer-booking-form">
                 <tr>
