@@ -46,7 +46,7 @@
                 <div class="admin-section-panel admin-section-panel4">
                     <div class="admin-panel-section-header">
                         <h2>List Movies</h2>
-                        <a class="addbtn" style="margin-left: 500px;" data-toggle="modal" data-target="#add-product">Thêm sản phẩm</a>
+                        <a class="addbtn"  data-toggle="modal" data-target="#add-movie">Add Movie</a>
 
                     </div>
                     <table cellpadding="10" cellspacing="10" border="1" style="width: 100%;">
@@ -62,34 +62,12 @@
                             <td>Action</td>
                         </tr>
                         <tbody id="tbody" class="p-3">
-                            <!-- <tr class="item mt-5" >
-                                <td>1</td>
-                                <td>Captain Marvel</td>
-                                <td>Action</td>
-                                <td>11/11/2021</td>
-                                <td>Marvel</td>
-                                <td>Captain</td>
-                                <td>Image</td>
-                                <td ><a href="" class="btn btn-primary">Edit</a> | 
-                                <a href="#" class="btn btn-danger">Delete</a></td>
-                            </tr>
-                            <tr class="item" >
-                                <td>1</td>
-                                <td>Captain Marvel</td>
-                                <td>Action</td>
-                                <td>11/11/2021</td>
-                                <td>Marvel</td>
-                                <td>Captain</td>
-                                <td>Image</td>
-                                <td ><a href="" class="btn btn-primary">Edit</a> | 
-                                <a href="#" class="btn btn-danger">Delete</a></td>
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>
             <!-- </div> -->
             <!-- <div class="admin-section-column"> -->
-            <div id="add-product" class="modal  fade" role="dialog">
+            <div id="add-movie" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -97,7 +75,7 @@
                             <hp class="modal-title">Movies</hp>
                             <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         </div>
-                        <form method="post" >
+                        <form method="post" action="add_movie.php" >
                             <div class="modal-body">
                                 <div class="form-group">
                                     
@@ -106,87 +84,109 @@
                                 </div>
                                 <div class="form-group">
                                     
-                                    <label for="movieTitle">Genre: </label>
+                                    <label for="movieGenre">Genre: </label>
                                     <input class="form-control" placeholder="Genre" type="text" name="movieGenre" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="movieTitle">Duration: </label>
+                                    <label for="movieDuration">Duration: </label>
                                     <input class="form-control" placeholder="Duration" type="number" name="movieDuration" required>
                                 </div>
                                 <div class="form-group">
                                     
-                                    <label for="movieTitle">Date: </label>
+                                    <label for="movieRelDate">Date: </label>
                                     <input class="form-control" placeholder="Release Date" type="date" name="movieRelDate" required>
                                 </div>
                                 <div class="form-group">
                                     
-                                    <label for="movieTitle">Director: </label>
+                                    <label for="movieDirector">Director: </label>
                                     <input class="form-control" placeholder="Director" type="text" name="movieDirector" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="movieTitle">Actors: </label>
+                                    <label for="movieActors">Actors: </label>
                                     <input class="form-control" placeholder="Actors" type="text" name="movieActors" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="movieTitle">Image: </label>
+                                    <label for="movieImg">Image: </label>
                                     <input class="form-control" type="file" name="movieImg" accept="image/*">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" value="submit" name="submit" class="form-btn btn btn-primary px-5 mr-2">Add Movie</button>
-                                    
                                 </div>
                             </div>
                         </form>
                     </div>  
                 </div>
             </div>
-            <!-- <div id="add-product" class="modal modal-addmovie fade" role="dialog">
-                <div class="admin-section-panel admin-section-panel2">
-                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
-                    <div class="admin-panel-section-header">
-                        <h2>Movies</h2>
-                    </div>
-                    <form action="" method="POST">
-                        <label for="movieTitle">Title: </label>
-                        <input placeholder="Title" type="text" name="movieTitle" required>
-                        <label for="movieTitle">Genre: </label>
-                        <input placeholder="Genre" type="text" name="movieGenre" required>
-                        <label for="movieTitle">Duration: </label>
-                        <input placeholder="Duration" type="number" name="movieDuration" required>
-                        <label for="movieTitle">Date: </label>
-                        <input placeholder="Release Date" type="date" name="movieRelDate" required>
-                        <label for="movieTitle">Director: </label>
-                        <input placeholder="Director" type="text" name="movieDirector" required>
-                        <label for="movieTitle">Actors: </label>
-                        <input placeholder="Actors" type="text" name="movieActors" required>
-                        <label for="movieTitle">Image: </label>
-                        <input type="file" name="movieImg" accept="image/*">
-                        <button type="submit" value="submit" name="submit" class="form-btn">Add Movie</button>
-                        <?php
-                            $link = mysqli_connect("localhost", "root", "", "cinema_db");
-                            $sql = "SELECT * FROM bookingTable";
-                        if(isset($_POST['submit'])){
-                            $insert_query = "INSERT INTO 
-                            movieTable (  movieImg,
-                                            movieTitle,
-                                            movieGenre,
-                                            movieDuration,
-                                            movieRelDate,
-                                            movieDirector,
-                                            movieActors)
-                            VALUES (        'img/".$_POST['movieImg']."',
-                                            '".$_POST["movieTitle"]."',
-                                            '".$_POST["movieGenre"]."',
-                                            '".$_POST["movieDuration"]."',
-                                            '".$_POST["movieRelDate"]."',
-                                            '".$_POST["movieDirector"]."',
-                                            '".$_POST["movieActors"]."')";
-                            mysqli_query($link,$insert_query);}
-                        ?>
-                    </form>
+              
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div id="delete-movie" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <hp class="modal-title">Delete Movie</hp>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-            </div>     -->
-            <!-- </div> -->
+                
+                <div class="modal-body">
+                    <p>Bạn có chắc rằng muốn xóa <strong class="movie-delete-title">Captain Marvel</strong> ?</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="btn-del-movie" type="submit" class="btn btn-danger" >Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Confirm Modal -->
+    <div id="edit-movie" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <hp class="modal-title">Chỉnh sửa thông tin phim</hp>
+                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+                <form method="post" id="update-form" novalidate enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="movieTitle">Title: </label>
+                            <input id="movieTitleUpdate" class="form-control" placeholder="Title" type="text" name="movieTitle" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <label for="movieGenre">Genre: </label>
+                            <input id="movieGenreUpdate" class="form-control" placeholder="Genre" type="text" name="movieGenre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="movieDuration">Duration: </label>
+                            <input id="movieDurationUpdate" class="form-control" placeholder="Duration" type="number" name="movieDuration" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <label for="movieRelDate">Date: </label>
+                            <input id="movieDateUpdate" class="form-control" placeholder="Release Date" type="date" name="movieRelDate" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <label for="movieDirector">Director: </label>
+                            <input id="movieDirectorUpdate" class="form-control" placeholder="Director" type="text" name="movieDirector" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="movieActors">Actors: </label>
+                            <input id="movieActorsUpdate" class="form-control" placeholder="Actors" type="text" name="movieActors" required>
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-edit-movie" type="submit" class="btn btn-primary px-5 mr-2">Sửa</button>
+                        </div>
+                    </div>
+                </form>
+            </div>  
         </div>
     </div>
 
@@ -198,7 +198,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-    let employeeSelected;
+    let movieSelected;
     // tải(read)
     function loadMovies(){
         $('#tbody tr').remove();
@@ -208,7 +208,7 @@
             success: function(data){
                 // console.log(data);
                 data.forEach(movie => {
-                    console.log(movie);
+                    // console.log(movie);
                     let linkposter = `http://localhost/Cinema-Reservation/${movie.movieImg}`;
                     let tr = $(`<tr class="item">
                                     <td>${movie.movieID}</td>
@@ -225,7 +225,7 @@
                                     </td>
                                 </tr>`);
                     $('#tbody').append(tr);
-                    tr.attr('employee-info',JSON.stringify(movie));
+                    tr.attr('movie-info',JSON.stringify(movie));
                 })
             },
             dataType: 'json'
@@ -233,6 +233,73 @@
         
     }
     loadMovies();
+
+    //xóa(delete)
+    function handleModalDel(e){
+        let tr = e.parentNode.parentNode;
+        let trStr = tr.getAttribute('movie-info');
+        // console.log(trStr);
+        movieSelected = JSON.parse(trStr);
+        $('.movie-delete-title').html(movieSelected.movieTitle);
+        $('#delete-movie').modal('show');
+    }
+    $("#btn-del-movie").click(e => {
+        let data = {
+            id: movieSelected.movieID
+        } ;
+        // console.log(data);
+        $.ajax({
+            type: "DELETE",
+            url: 'delete_movie.php',
+            data: JSON.stringify(data),
+            success: function(data) {
+                // console.log(data);
+                $('#delete-movie').modal('hide');
+                loadMovies();
+            },
+            dataType: 'json'
+        })
+    })
+
+    //sửa(update)
+    function handleModalEdit(e){
+        // console.log(e);
+        let tr = e.parentNode.parentNode;
+        let trStr = tr.getAttribute('movie-info');
+        movieSelected = JSON.parse(trStr);
+        $('#movieTitleUpdate').val(movieSelected.movieTitle);
+        $('#movieGenreUpdate').val(movieSelected.movieGenre);
+        $('#movieDurationUpdate').val(movieSelected.movieDuration);
+        $('#movieDateUpdate').val(movieSelected.movieRelDate);
+        $('#movieDirectorUpdate').val(movieSelected.movieDirector);
+        $('#movieActorsUpdate').val(movieSelected.movieActors);
+
+        $('#edit-movie').modal('show');
+    }
+    $("#btn-edit-movie").click(e => {
+        e.preventDefault();
+        let data = {
+            movieID: movieSelected.movieID,
+            movieTitle: $('#movieTitleUpdate').val(),
+            movieGenre: $('#movieGenreUpdate').val(),
+            movieDuration: $('#movieDurationUpdate').val(),
+            movieRelDate: $('#movieDateUpdate').val(),
+            movieDirector: $('#movieDirectorUpdate').val(),
+            movieActors: $('#movieActorsUpdate').val()
+        } ;
+        // console.log(data);
+        $.ajax({
+            type: "POST",
+            url: 'update_movie.php',
+            data: JSON.stringify(data),
+            success: function(data) {
+                console.log(data);
+                $('#edit-movie').modal('hide');
+                loadMovies();
+            },
+            dataType: 'json'
+        })
+    })
     </script>
 </body>
 

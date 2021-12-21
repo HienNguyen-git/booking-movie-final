@@ -1076,10 +1076,12 @@ td{
     left: 20vw !important;
 }
 .addbtn{
+    position: absolute;
+    right: 24px;
     border-radius: 4px;
     border: none;
     padding: 10px;
-    width: 49%;
+    /* width: 100%; */
     text-align: center;
     background-color: lightblue;
     color: #FFF;
