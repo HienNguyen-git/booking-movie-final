@@ -167,7 +167,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        let employeeSelected;
+    let employeeSelected;
     // tải(read)
     function loadEmployee(){
         $('#tbody tr').remove();
