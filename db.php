@@ -163,7 +163,7 @@
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Reset your password';
-            $mail->Body    = "<p>Click <a href='http://localhost/Lab08/reset_password.php?email=$email&token=$token'>here</a> to reset your password</p>";
+            $mail->Body    = "<p>Click <a href='http://localhost/Cinema-Reservation/reset_password.php?email=$email&token=$token'>here</a> to reset your password</p>";
             //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
