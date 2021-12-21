@@ -283,6 +283,7 @@ footer {
     font-weight: bold;
 }
 
+
 .movie-box {
     position: relative;
     margin: 10px 0;
@@ -579,8 +580,9 @@ footer {
     border: none;
     padding: 10px;
     margin-top: 10px;
+    margin-bottom: 15px;
     float: right;
-    width: 50%;
+    width: 95%;
     text-align: center;
     background-color: rgb(128, 199, 223);
     color: #FFF;

@@ -34,7 +34,7 @@
     <h1>Hello <?=$firstname?> <?=$lastname?></h1>
         <h3>Your account info</h3>
         <div class="account-container">
-            <table class="table table-bordered">
+            <table class="table table-bordered customer-booking-form">
                 <tr>
                     <th>ID</th>
                     <th>Movie name</th>
