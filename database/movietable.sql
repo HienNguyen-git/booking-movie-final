@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movietable`
+-- Table structure for table `movieTable`
 --
 
-CREATE TABLE `movietable` (
+CREATE TABLE `movieTable` (
   `movieID` int(11) NOT NULL,
   `movieImg` varchar(150) NOT NULL,
   `movieTitle` varchar(100) NOT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE `movietable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `movietable`
+-- Dumping data for table `movieTable`
 --
 
-INSERT INTO `movietable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `movieDuration`, `movieRelDate`, `movieDirector`, `movieActors`, `ticketPrice`) VALUES
+INSERT INTO `movieTable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `movieDuration`, `movieRelDate`, `movieDirector`, `movieActors`, `ticketPrice`) VALUES
 (23, 'img/movie-poster-1.jpg', 'Hawkeye', 'Action, Scienfic', 180, '2021-03-23', 'Marvel', 'Jeremy Renner, Troy Baker, Tody Diniel', 30000),
 (24, 'img/movie-poster-2.jpg', 'Ant Man', 'Action, Comedy', 200, '2021-03-02', 'Marvel', 'Paul Rudd, Stan Lee, T.I', 20000),
 (25, 'img/movie-poster-3.jpg', 'Shang-Chi', 'Superhero', 250, '2021-03-09', 'Marvel', 'Simu Liu, Awkquafina, Fala Chen', 25000),
@@ -56,9 +56,9 @@ INSERT INTO `movietable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `mo
 --
 
 --
--- Indexes for table `movietable`
+-- Indexes for table `movieTable`
 --
-ALTER TABLE `movietable`
+ALTER TABLE `movieTable`
   ADD PRIMARY KEY (`movieID`),
   ADD UNIQUE KEY `movieID` (`movieID`);
 
@@ -67,9 +67,9 @@ ALTER TABLE `movietable`
 --
 
 --
--- AUTO_INCREMENT for table `movietable`
+-- AUTO_INCREMENT for table `movieTable`
 --
-ALTER TABLE `movietable`
+ALTER TABLE `movieTable`
   MODIFY `movieID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 

@@ -59,11 +59,11 @@
         <h3 style="margin-bottom: 3rem;">Best movie of this month</h3>
         <div>
             <div style="font-size: 30px;" class="movie-box">
-                <img src="img/movie-poster-6.jpg" alt=" " />
+                <img src="img/movie-poster-1.jpg" alt=" " />
                 <div class="movie-info">
                 <h3>Captain Marvel</h3>
-                <a style="display: block; padding: 2rem;" href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>
-                <a style="display: block; padding: 2rem;" href="booking.php?id='1'"><i class="fas fa-ticket-alt"></i> Book now</a>
+                <a style="display: block; padding: 2rem;" href="viewdetail.php?id=23"><i class="fas fa-eye"></i> View detail</a>
+                <a style="display: block; padding: 2rem;" href="booking.php?id='23'"><i class="fas fa-ticket-alt"></i> Book now</a>
                 </div>
             </div>
         </div>
