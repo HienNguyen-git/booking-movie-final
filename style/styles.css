@@ -42,6 +42,7 @@ header {
   font-family: "Lobster", cursive;
   text-shadow: 2px 2px 0px rgb(80, 135, 153);
 }
+
 .navbar-brand .navbar-container {
   flex: 1;
 }
@@ -163,9 +164,10 @@ footer {
   height: 50vh;
 }
 
-.user-booking-container{
-    margin-top: 0;
-    padding: 0 10%;
+.user-booking-container {
+  margin-top: 0;
+  padding: 0 10%;
+  height: 50vh;
 }
 
 .account-info-container > h1,
@@ -184,7 +186,7 @@ footer {
 }
 
 .account-info-container > h3:after,
-.user-booking-container > h3:after{
+.user-booking-container > h3:after {
   content: "";
   display: block;
   height: 3px;
@@ -192,6 +194,19 @@ footer {
   background: rgb(53, 92, 105);
   position: relative;
   bottom: -10px;
+}
+
+/* Index Poster */
+.index-poster {
+  margin: 4rem 0;
+  padding: 0 10%;
+  background-image: url(../img/poster1.jpg), url(../img/poster2.png),
+    url(../img/poster3.jpg), url(../img/poster-repeat.jpg);
+  height: 70vh;
+  background-size: contain;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-position: left, right, center, center;
+  border-radius: 10px;
 }
 
 /* Movie Section Styling */
@@ -314,7 +329,6 @@ footer {
 }
 
 .user-booking-table tbody {
-  height: 40vh;
   overflow: scroll;
 }
 

@@ -18,6 +18,8 @@
     $sql2 = "SELECT * FROM movieTable";
     ?>
     <header></header>
+    <section class="index-poster">
+    </section>
     <section id="home-section-1" class="movie-show-container">
         <h1>Recommend for you</h1>
         <h3>Book a movie now</h3>
