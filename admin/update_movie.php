@@ -30,12 +30,13 @@
     $movieDate = $input->movieRelDate;
     $movieDirector = $input->movieDirector;
     $movieActors = $input->movieActors;
+    $ticketPrice = $input->ticketPrice;
 
-    $sql = 'update movietable set movieTitle=?, movieGenre=?, movieDuration=?, movieRelDate=?, movieDirector=?,movieActors=? where movieID=?';
+    $sql = 'update movietable set movieTitle=?, movieGenre=?, movieDuration=?, movieRelDate=?, movieDirector=?,movieActors=?, ticketPrice=? where movieID=?';
     $conn = open_database();
 
     $stm = $conn->prepare($sql);
-    $stm->bind_param('ssisssi',$movieTitle,$movieGenre,$movieDuration,$movieDate,$movieDirector,$movieActors,$movieID);
+    $stm->bind_param('ssisssii',$movieTitle,$movieGenre,$movieDuration,$movieDate,$movieDirector,$movieActors,$ticketPrice,$movieID);
 
     if(!$stm->execute()){
         die(json_encode(array('code' => 5, 'message' => 'Execute thất bại')));

@@ -58,6 +58,7 @@
                             <td>Date</td>
                             <td>Director</td>
                             <td>Actors</td>
+                            <td>Price</td>
                             <td>Image</td>
                             <td>Action</td>
                         </tr>
@@ -104,6 +105,10 @@
                                 <div class="form-group">
                                     <label for="movieActors">Actors: </label>
                                     <input class="form-control" placeholder="Actors" type="text" name="movieActors" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ticketPrice">Price: </label>
+                                    <input class="form-control" placeholder="Price" type="number" name="ticketPrice" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="movieImg">Image: </label>
@@ -182,6 +187,10 @@
                             <input id="movieActorsUpdate" class="form-control" placeholder="Actors" type="text" name="movieActors" required>
                         </div>
                         <div class="form-group">
+                            <label for="ticketPriceUpdate">Price: </label>
+                            <input id="ticketPriceUpdate" class="form-control" placeholder="Price" type="number" name="ticketPriceUpdate" required>
+                        </div>
+                        <div class="form-group">
                             <button id="btn-edit-movie" type="submit" class="btn btn-primary px-5 mr-2">Sửa</button>
                         </div>
                     </div>
@@ -218,6 +227,7 @@
                                     <td>${movie.movieRelDate}</td>
                                     <td>${movie.movieDirector}</td>
                                     <td>${movie.movieActors}</td>
+                                    <td>${movie.ticketPrice}</td>
                                     
                                     <td><img class="tdImg" src="${linkposter}" alt=""></td>
                                     <td><a onclick="handleModalEdit(this)" href="#">Edit</a> |
@@ -273,7 +283,8 @@
         $('#movieDateUpdate').val(movieSelected.movieRelDate);
         $('#movieDirectorUpdate').val(movieSelected.movieDirector);
         $('#movieActorsUpdate').val(movieSelected.movieActors);
-
+        $('#ticketPriceUpdate').val(movieSelected.ticketPrice);
+        
         $('#edit-movie').modal('show');
     }
     $("#btn-edit-movie").click(e => {
@@ -285,7 +296,8 @@
             movieDuration: $('#movieDurationUpdate').val(),
             movieRelDate: $('#movieDateUpdate').val(),
             movieDirector: $('#movieDirectorUpdate').val(),
-            movieActors: $('#movieActorsUpdate').val()
+            movieActors: $('#movieActorsUpdate').val(),
+            ticketPrice: $('#ticketPriceUpdate').val()
         } ;
         // console.log(data);
         $.ajax({

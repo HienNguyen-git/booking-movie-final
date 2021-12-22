@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cinema_db`
 --
-
+CREATE DATABASE IF NOT EXISTS `cinema_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `cinema_db`;
 -- --------------------------------------------------------
 
 --

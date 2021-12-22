@@ -9,14 +9,17 @@
                         movieDuration,
                         movieRelDate,
                         movieDirector,
-                        movieActors)
+                        movieActors,
+                        ticketPrice)
         VALUES (        'img/".$_POST['movieImg']."',
                         '".$_POST["movieTitle"]."',
                         '".$_POST["movieGenre"]."',
                         '".$_POST["movieDuration"]."',
                         '".$_POST["movieRelDate"]."',
                         '".$_POST["movieDirector"]."',
-                        '".$_POST["movieActors"]."')";
+                        '".$_POST["movieActors"]."',
+                        '".$_POST["ticketPrice"]."'
+                        )";
                         mysqli_query($link,$insert_query);
                     }
     header('Location: movies.php');
