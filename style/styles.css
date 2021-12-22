@@ -200,7 +200,8 @@ footer {
 
 /* Index Poster */
 .index-poster {
-  margin: 4rem 0;
+  margin-bottom: 4rem;
+  margin-top: -2rem;
   padding: 0 10%;
   background-image: url(../img/poster1.jpg), url(../img/poster2.png),
     url(../img/poster3.jpg), url(../img/poster-repeat.jpg);
@@ -209,6 +210,7 @@ footer {
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
   background-position: left, right, center, center;
   border-radius: 10px;
+  top:-4rem;
 }
 
 /* Movie Section Styling */

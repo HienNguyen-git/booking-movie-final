@@ -22,7 +22,7 @@
     //     die(json_encode(array('code' => 4, 'message' => 'Thông tin không hợp lệ')));
     // }
     $id = $input->id;
-    $sql = 'delete from movietable where movieID = ?';
+    $sql = 'delete from movieTable where movieID = ?';
     $conn = open_database();
 
     $stm = $conn->prepare($sql);

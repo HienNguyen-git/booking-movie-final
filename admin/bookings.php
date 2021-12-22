@@ -59,23 +59,31 @@
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<div class=\"admin-panel-section-booking-item\">\n";
                                     echo "                            <div class=\"admin-panel-section-booking-response\">\n";
-                                    echo "                                <i class=\"fas fa-check accept-booking\" title=\"Verify booking\"></i>\n";
+                                    echo "                                <a href=changePaymentStatus.php?id=".$row['bookingID']."'><i class=\"fas fa-wrench accept-booking\" title=\"Change payment status\"></i></a>\n";
                                     echo "                                <a href='deleteBooking.php?id=".$row['bookingID']."'><i class=\"fas fa-times decline-booking\" title=\"Reject booking\"></i></a>\n";
                                     echo "                            </div>\n";
                                     echo "                            <div class=\"admin-panel-section-booking-info\">\n";
                                     echo "                                <div>\n";
                                     echo "                                    <h3>". $row['movieName'] ."</h3>\n";
-                                    echo "                                    <i class=\"fas fa-circle \"></i>\n";
+                                    echo "                                    <i class=\"fas fa-grip-lines-vertical \"></i>\n";
                                     echo "                                    <h4>". $row['bookingTheatre'] ."</h4>\n";
-                                    echo "                                    <i class=\"fas fa-circle \"></i>\n";
+                                    echo "                                    <i class=\"fas fa-grip-lines-vertical \"></i>\n";
                                     echo "                                    <h4>". $row['bookingDate'] ."</h4>\n";
-                                    echo "                                    <i class=\"fas fa-circle \"></i>\n";
+                                    echo "                                    <i class=\"fas fa-grip-lines-vertical \"></i>\n";
                                     echo "                                    <h4>". $row['bookingTime'] ."</h4>\n";
                                     echo "                                </div>\n";
                                     echo "                                <div>\n";
                                     echo "                                    <h4>". $row['bookingFName'] ." ". $row['bookingLName'] ."</h4>\n";
-                                    echo "                                    <i class=\"fas fa-circle\"></i>\n";
+                                    echo "                                    <i class=\"fas fa-grip-lines-vertical\"></i>\n";
                                     echo "                                    <h4>". $row['bookingPNumber'] ."</h4>\n";
+                                    echo "                                    <i class=\"fas fa-grip-lines-vertical\"></i>\n";
+                                                                            if ($row['paymentStatus']){
+                                    echo "                                    <i class=\"fas fa-check-circle\" style='color:lightblue'></i>\n";
+                                    echo "                                    <h4>Paid</h4>\n";
+                                                                            }else{
+                                    echo "                                    <i class=\"fas fa-exclamation-circle\" style='color:orange'></i>\n";
+                                    echo "                                    <h4>Not yet paid</h4>\n";
+                                                                            }
                                     echo "                                </div>\n";
                                     echo "                            </div>\n";
                                     echo "                        </div>";

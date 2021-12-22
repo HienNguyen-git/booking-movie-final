@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Mlem Cinema</title>
     </head>
-    <link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo.png">
 <body>
     <?php
     $link = mysqli_connect("localhost", "root", "", "cinema_db");

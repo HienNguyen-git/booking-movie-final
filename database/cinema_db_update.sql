@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2021 at 11:29 AM
+-- Generation Time: Dec 22, 2021 at 04:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -44,7 +44,8 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`username`, `firstname`, `lastname`, `email`, `sdt`, `password`, `activated`, `activate_token`) VALUES
 ('haidang', 'Nguyen', 'Dang', 'nchdang16012001@gmail.com', '0395675163', '$2y$10$uyeioFcmRWB2t9ss41t9R.k4/CiEBHpaQTkgMzRpPfrOVHHCHbOjq', b'1', ''),
-('tronghien', 'Nguyen', 'Hien', 'tronghien123654@gmail.com', '0949993438', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456');
+('tronghien', 'Nguyen', 'Hien', 'tronghien123654@gmail.com', '0949993438', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456'),
+('tronghien0403', 'Trong', 'Hien', 'incognito.designoop@gmail.com', '0913546545', '$2y$10$GnjHVHKq8o6IvvZHb7zUU.3/rd4xITyk3xz78PdXnyjbeiC2qR87y', b'1', '');
 
 -- --------------------------------------------------------
 
@@ -60,19 +61,19 @@ CREATE TABLE `bookingTable` (
   `bookingTime` varchar(50) NOT NULL,
   `bookingFName` varchar(100) NOT NULL,
   `bookingLName` varchar(100) DEFAULT NULL,
-  `bookingPNumber` varchar(12) NOT NULL
+  `bookingPNumber` varchar(12) NOT NULL,
+  `paymentStatus` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bookingTable`
 --
 
-INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`) VALUES
-(19, 'Captain Marvel', 'main-hall', '13-3', '15-00', 'Ahmed', 'Ismael', '010152658930'),
-(22, 'The Lego Movie', 'vip-hall', '13-3', '18-00', 'Kareem', 'Ahmed', '01589965'),
-(24, 'Spider Man Far From Home', 'vip-hall', '13-3', '12-00', 'Nguyen', 'Hien', '0949993438'),
-(25, 'Endgame', 'private-hall', '15-3', '15-00', 'Nguyen', 'Hien', '0949993438'),
-(26, 'Captain Marvel', 'main-hall', '14-3', '15-00', 'Nguyen', 'Hien', '0949993438');
+INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `paymentStatus`) VALUES
+(29, 'Spider Man Far From Home', 'main-hall', '14-3', '15-00', 'Trong', 'Hien', '0913546545', 1),
+(30, 'The Vanishing', 'main-hall', '14-3', '24-00', 'Trong', 'Hien', '0913546545', 1),
+(32, 'Endgame', 'vip-hall', '12-3', '24-00', 'Nguyen', 'Hien', '0949993438', 0),
+(33, 'Qarmat Bitamrmat  ', 'main-hall', '15-3', '15-00', 'Nguyen', 'Hien', '0949993438', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,7 @@ INSERT INTO `movieTable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `mo
 (18, 'img/movie-poster-7.png', 'Endgame', 'Action', 200, '2021-12-22', 'Marvel', 'Iron Man', 75000),
 (19, 'img/images.png', 'Spider Man Far From Home', 'superhero', 180, '2021-12-13', 'Marvel', 'tom holland', 120000),
 (20, 'img/movie-poster-8.png', 'Hawkeyeee', 'Actioneee', 220, '2021-12-14', 'Marveleee', 'Hawkeyeee', 60000),
-(21, 'img/', 'The Conjuring: The Devil Made Me Do It', 'Horror/Thriller', 250, '2021-06-04', 'Michael Chaves', 'Dang gay', 98000);
+(22, 'img/movie-poster-9.jpg', 'The Conjuring: The Devil Made Me Do It', 'Horror/Thriller', 250, '2021-12-22', 'Michael Chaves', 'Dang gay', NULL);
 
 -- --------------------------------------------------------
 
@@ -203,13 +204,13 @@ ALTER TABLE `reset_token`
 -- AUTO_INCREMENT for table `bookingTable`
 --
 ALTER TABLE `bookingTable`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `movieTable`
 --
 ALTER TABLE `movieTable`
-  MODIFY `movieID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `movieID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
