@@ -18,10 +18,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <title>Mlem Cinema</title>
-    </head>
+</head>
     <!-- <link rel="icon" href="logo.png" type="image/gif" sizes="16x16"> -->
 <body>
     <?php
@@ -30,39 +28,43 @@
     $sql = "SELECT * FROM bookingTable where bookingPNumber = (select sdt from account WHERE username='$user')";
     ?>
     <header></header>
-    <section class="account-info-container">
-    <h1>Your booking list</h1>
+    <section class="user-booking-container">
+        <h1>Your booking list</h1>
         <h3>Here you are</h3>
-        <div class="account-container">
-            <table class="table table-bordered customer-booking-form">
-                <tr>
-                    <th>ID</th>
-                    <th>Movie name</th>
-                    <th>Theatre</th>
-                    <th>Booking date</th>
-                    <th>Booking time</th>
-                </tr>
-                <?php
-                
-                if($result = mysqli_query($link, $sql)){
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_array($result)){
-                            ?>
-                                <tr>
-                                    <td><?=$row['bookingID']?></td>
-                                    <td><?=$row['movieName']?></td>
-                                    <td><?=$row['bookingTheatre']?></td>
-                                    <td><?=$row['bookingDate']?></td>
-                                    <td><?=$row['bookingTime']?></td>
-                                </tr>
-                            <?php
+        <div class="user-booking-table">
+            <table class="">
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Movie name</th>
+                        <th>Theatre</th>
+                        <th>Booking date</th>
+                        <th>Booking time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        if($result = mysqli_query($link, $sql)){
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_array($result)){
+                                    ?>
+                                        <tr>
+                                            <td><?=$row['bookingID']?></td>
+                                            <td><?=$row['movieName']?></td>
+                                            <td><?=$row['bookingTheatre']?></td>
+                                            <td><?=$row['bookingDate']?></td>
+                                            <td><?=$row['bookingTime']?></td>
+                                        </tr>
+                                        <?php
+                                }
+                            } else{
+                            }
+                        } else{
+                            echo '<p>You have not booking any ticket yet!</p>';
                         }
-                    } else{
-                    }
-                } else{
-                    echo '<p>You have not booking any ticket yet!</p>';
-                }
-                ?>
+                    ?>
+                </tbody>
             </table>
         </div>
     </section>

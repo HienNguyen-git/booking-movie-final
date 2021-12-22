@@ -20,7 +20,6 @@
     // if(empty($input->id)){
     //     http_response_code(405);
     //     die(json_encode(array('code' => 4, 'message' => 'Thông tin không hợp lệ')));
-        
     // }
     $id = $input->id;
     $sql = 'delete from movietable where movieID = ?';

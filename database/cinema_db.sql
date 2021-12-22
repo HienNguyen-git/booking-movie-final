@@ -8,6 +8,7 @@
 -- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +22,33 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `cinema_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `cinema_db`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `username` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `firstname` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `activated` bit(1) DEFAULT b'0',
+  `activate_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`username`, `firstname`, `lastname`, `email`, `sdt`, `password`, `activated`, `activate_token`) VALUES
+('haidang', 'Nguyen', 'Dang', 'nchdang16012001@gmail.com', '0395675163', '$2y$10$uyeioFcmRWB2t9ss41t9R.k4/CiEBHpaQTkgMzRpPfrOVHHCHbOjq', b'1', ''),
+('tronghien', 'Nguyen', 'Hien', 'tronghien123654@gmail.com','0949993438', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456');
+
+
+
 -- --------------------------------------------------------
 
 --
@@ -49,24 +77,51 @@ INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `booking
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedbackTable`
+-- Table structure for table `employee`
 --
 
-CREATE TABLE IF NOT EXISTS `feedbackTable` (
-  `msgID` int(12) NOT NULL,
-  `senderfName` varchar(50) NOT NULL,
-  `senderlName` varchar(50) DEFAULT NULL,
-  `sendereMail` varchar(100) NOT NULL,
-  `senderfeedback` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE TABLE `employee` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `job` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `feedbackTable`
+-- Dumping data for table `employee`
 --
 
-INSERT INTO `feedbackTable` (`msgID`, `senderfName`, `senderlName`, `sendereMail`, `senderfeedback`) VALUES
-(1, 'Ahmed', 'Ali', 'Ahmed@mail.com', 'Hello first'),
-(2, 'Ahmed', 'Ali', 'asa@as.com', 'asdas');
+INSERT INTO `employee` (`id`, `name`, `phone`, `job`, `gender`) VALUES
+(1, 'Nguyen Cao Hai Dang', '908665356', 'receptionist', 'Male'),
+(2, 'Nguyen Le Thu', '394564152', 'sell food', 'Female'),
+(3, 'Nguyen Trong Hien', '395676987', 'protector', 'Male'),
+(4, 'Nguyen Bi', '397891425', 'receptionist', 'Male'),
+(5, 'Nguyen Kien', '1234567890', 'sell food drinks', 'Male'),
+(6, 'Bibipiqwe', '0908577787', 'seller pop', 'male'),
+(7, 'Nguyen bo', '09084571452', 'sell', 'male');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hall`
+--
+
+CREATE TABLE `hall` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `chairs` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `hall`
+--
+
+INSERT INTO `hall` (`id`, `name`, `chairs`) VALUES
+(0, 'Main Hall', 100),
+(1, 'VIP Halll', 200),
+(8, 'A Hall', 0),
+(8, 'B Hall', 0);
 
 -- --------------------------------------------------------
 
@@ -74,7 +129,7 @@ INSERT INTO `feedbackTable` (`msgID`, `senderfName`, `senderlName`, `sendereMail
 -- Table structure for table `movieTable`
 --
 
-CREATE TABLE IF NOT EXISTS `movieTable` (
+CREATE TABLE `movieTable` (
   `movieID` int(11) NOT NULL,
   `movieImg` varchar(150) NOT NULL,
   `movieTitle` varchar(100) NOT NULL,
@@ -83,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `movieTable` (
   `movieRelDate` date NOT NULL,
   `movieDirector` varchar(50) NOT NULL,
   `movieActors` varchar(150) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `movieTable`
@@ -95,7 +150,23 @@ INSERT INTO `movieTable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `mo
 (3, 'img/movie-poster-3.jpg', 'The Lego Movie', 'Animation, Action, Adventure', 110, '2014-02-07', 'Phil Lord, Christopher Miller', 'Chris Pratt, Will Ferrell, Elizabeth Banks'),
 (4, 'img/movie-poster-4.jpg', 'Nadi Elregal Elserri ', 'Comedy', 105, '2019-01-23', ' Ayman Uttar', 'Karim Abdul Aziz, Ghada Adel, Maged El Kedwany, Nesreen Tafesh, Bayyumy Fouad, Moataz El Tony '),
 (5, 'img/movie-poster-5.jpg', 'VICE', 'Biography, Comedy, Drama', 132, '2018-12-25', 'Adam McKay', 'Christian Bale, Amy Adams, Steve Carell'),
-(6, 'img/movie-poster-6.jpg', 'The Vanishing', 'Crime, Mystery, Thriller', 107, '2019-01-04', 'Kristoffer Nyholm', 'Gerard Butler, Peter Mullan, Connor Swindells');
+(6, 'img/movie-poster-6.jpg', 'The Vanishing', 'Crime, Mystery, Thriller', 107, '2019-01-04', 'Kristoffer Nyholm', 'Gerard Butler, Peter Mullan, Connor Swindells'),
+(18, 'img/movie-poster-7.png', 'Endgame', 'Action', 200, '2021-12-22', 'Marvel', 'Iron Man'),
+(19, 'img/images.png', 'spider', 'superhero', 180, '2021-12-13', 'Marvel', 'tom holland'),
+(20, 'img/movie-poster-8.png', 'Hawkeyeee', 'Actioneee', 220, '2021-12-14', 'Marveleee', 'Hawkeyeee');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_token`
+--
+
+CREATE TABLE `reset_token` (
+  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `expire_on` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 --
 -- Indexes for dumped tables
@@ -112,18 +183,17 @@ ALTER TABLE `bookingTable`
   ADD KEY `bookingID_4` (`bookingID`);
 
 --
--- Indexes for table `feedbackTable`
---
-ALTER TABLE `feedbackTable`
-  ADD PRIMARY KEY (`msgID`),
-  ADD UNIQUE KEY `msgID` (`msgID`);
-
---
 -- Indexes for table `movieTable`
 --
 ALTER TABLE `movieTable`
   ADD PRIMARY KEY (`movieID`),
   ADD UNIQUE KEY `movieID` (`movieID`);
+
+--
+-- Indexes for table `reset_token`
+--
+ALTER TABLE `reset_token`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -134,11 +204,6 @@ ALTER TABLE `movieTable`
 --
 ALTER TABLE `bookingTable`
   MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT for table `feedbackTable`
---
-ALTER TABLE `feedbackTable`
-  MODIFY `msgID` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `movieTable`
 --
