@@ -31,8 +31,6 @@
             <ul>
                 <a href="admin.php"><li><i class="fas fa-sliders-h"></i>Dashboard</li></a>
                 <a href="bookings.php"><li><i class="fas fa-ticket-alt"></i>Bookings </i></li></a>
-                <li class="admin-navigation-schedule"><i class="fas fa-calendar-alt"></i>Schedule 
-                </li>
                 <ul class="admin-navigation-schedule-dropdwn hidden-div">
                     <li>View Schedule</li>
                     <li>Edit Schedule</li>

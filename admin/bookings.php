@@ -33,8 +33,6 @@
             <ul>
                 <a href="admin.php"><li><i class="fas fa-sliders-h"></i>Dashboard</li></a>
                 <a href="bookings.php"><li class="active-menu"><i class="fas fa-ticket-alt"></i>Bookings </i></li></a>
-                <li class="admin-navigation-schedule"><i class="fas fa-calendar-alt"></i>Schedule 
-                </li>
                 <ul class="admin-navigation-schedule-dropdwn hidden-div">
                     <li>View Schedule</li>
                     <li>Edit Schedule</li>
@@ -46,7 +44,7 @@
         </div>
         <div class="admin-section admin-section2">
             <div class="admin-section-column">
-                <div class="admin-section-panel admin-section-panel2">
+                <div class="admin-section-panel admin-section-panel2 w-60vw">
                     <div class="admin-panel-section-header">
                         <h2>Bookings</h2>
                     </div>
