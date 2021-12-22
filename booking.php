@@ -15,7 +15,6 @@
         $movieImageById = mysqli_query($link,$movieQuery);
         $row = mysqli_fetch_array($movieImageById);
 
-
         $link2 = mysqli_connect("localhost", "root", "", "cinema_db");
         $sql = "SELECT * FROM account where username='$user'";
         $result = mysqli_fetch_assoc(mysqli_query($link2, $sql));
@@ -80,6 +79,10 @@
                     <tr>
                         <td>ACTORS</td>
                         <td><?php echo $row['movieActors']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>TICKET PRICE</td>
+                        <td><?php echo $row['ticketPrice']; ?></td>
                     </tr>
                 </table>
             </div>
@@ -166,6 +169,7 @@
 
     <script src="scripts/jquery-3.3.1.min.js "></script>
     <script src="scripts/script.js "></script>
+    <script></script>
 </body>
 
 </html>

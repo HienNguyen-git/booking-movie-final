@@ -23,7 +23,7 @@
         
     // }
 
-    $id = generateID() + 1;
+    $id = generateID('hall') + 1;
     $name = $input->name;
     $chairs = $input->chairs;
 

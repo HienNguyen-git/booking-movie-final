@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
     <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../style/styles2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -76,6 +80,16 @@
                                     echo "                            </div>\n";
                                     echo "                        </div>";
                                 }
+                                $sql2 = "select sum(ticketPrice) as 'totalRevenue' from bookingTable left join movieTable on bookingTable.movieName = movieTable.movieTitle;";
+                                if($result2 = mysqli_query($link, $sql2)){
+                                    $revenue = mysqli_fetch_assoc($result2)['totalRevenue'];
+                                    echo "<div class='alert alert-info' style='display: inline-block;
+                                    right: 0;
+                                    margin-right: 0;
+                                    position: absolute;
+                                    top: 11vh;'>Estimate total revenue:  <span class='h3 ml-3'>$revenue</span> VND</div>";
+                                }
+                                
                                 mysqli_free_result($result);
                             } else{
                                 echo '<h4 class="no-annot">No Bookings right now</h4>';

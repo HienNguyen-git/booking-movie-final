@@ -19,7 +19,7 @@
     $link = mysqli_connect("localhost", "root", "", "cinema_db");
     $sql = "SELECT * FROM bookingTable";
     $bookingsNo=mysqli_num_rows(mysqli_query($link, $sql));
-    $messagesNo=mysqli_num_rows(mysqli_query($link, "SELECT * FROM feedbackTable"));
+    // $messagesNo=mysqli_num_rows(mysqli_query($link, "SELECT * FROM feedbackTable"));
     $moviesNo=mysqli_num_rows(mysqli_query($link, "SELECT * FROM movieTable"));
     ?>
     <div class="admin-section-header">

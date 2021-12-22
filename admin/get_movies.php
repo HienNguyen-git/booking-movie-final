@@ -1,7 +1,7 @@
 <?php
     require_once('admindb.php');
     
-    $sql = 'select * from movietable';
+    $sql = 'select * from movieTable';
     $conn = open_database();
 
     $result = $conn->query($sql);

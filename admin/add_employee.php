@@ -23,7 +23,7 @@
         
     // }
 
-    $id = generateID() + 1;
+    $id = generateID('employee') + 1;
     $name = $input->name;
     $phone = $input->phone;
     $job = $input->job;

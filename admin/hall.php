@@ -159,7 +159,7 @@
             type: "GET",
             url: 'get_halls.php',
             success: function(data){
-                // console.log(data);
+                console.log(data);
                 data.forEach(hall => {
                     // console.log(hall);
                     let tr = $(`<tr class="item">
@@ -186,7 +186,7 @@
         // console.log('hi');
         let data = {
             name: $('#hallNameAdd').val(),
-            chairs: $('#hallNameAdd').val(),
+            chairs: $('#hallChairsAdd').val(),
             
             
         }

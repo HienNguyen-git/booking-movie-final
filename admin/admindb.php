@@ -16,8 +16,8 @@
         return $conn;
     }
 
-    function generateID(){
-        $sql = 'select * from employee ORDER BY id DESC LIMIT 1';
+    function generateID($tableName){
+        $sql = "select * from $tableName ORDER BY id DESC LIMIT 1";
         $conn = open_database();
 
         $result = $conn->query($sql);
