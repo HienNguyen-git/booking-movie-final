@@ -56,11 +56,10 @@
 
     <section id="home-section-2" class="movie-show-container-hot">
         <h1>Hot movie</h1>
-        <h3>Best movie of this month</h3>
-
-        <div class="movies-container">
+        <h3 style="margin-bottom: 3rem;">Best movie of this month</h3>
+        <div>
             <div style="font-size: 30px;" class="movie-box">
-                <img src="img/movie-poster-1.jpg" alt=" " />
+                <img src="img/movie-poster-6.jpg" alt=" " />
                 <div class="movie-info">
                 <h3>Captain Marvel</h3>
                 <a style="display: block; padding: 2rem;" href="viewdetail.php?id=1"><i class="fas fa-eye"></i> View detail</a>

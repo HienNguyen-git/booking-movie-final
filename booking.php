@@ -24,6 +24,9 @@
         $lastname = $result['lastname'];
         $email = $result['email'];
         $sdt = $result['sdt'];
+
+        $hallSql = "select name from hall"; 
+        $hallList = mysqli_query($link,$hallSql);
 ?>
 
 <head>
@@ -91,18 +94,24 @@
 
                     <select name="theatre" required>
                         <option value="" disabled selected>THEATRE</option>
-                        <option value="main-hall">Main Hall</option>
-                        <option value="vip-hall">VIP Hall</option>
-                        <option value="private-hall">Private Hall</option>
+                        <?php
+                            if(mysqli_num_rows($hallList) > 0){
+                                while($row1 = mysqli_fetch_array($hallList)){
+                                    ?>
+                                        <option value="<?=$row1['name']?>"><?=$row1['name']?></option>
+                                    <?php
+                                }
+                            }
+                        ?>
                     </select>
 
                     <select name="date" required>
                         <option value="" disabled selected>DATE</option>
-                        <option value="12-3">March 12,2019</option>
-                        <option value="13-3">March 13,2019</option>
-                        <option value="14-3">March 14,2019</option>
-                        <option value="15-3">March 15,2019</option>
-                        <option value="16-3">March 16,2019</option>
+                        <option value="1-1-2022">January 1,2022</option>
+                        <option value="2-1-2022">January 2,2022</option>
+                        <option value="3-1-2022">January 3,2022</option>
+                        <option value="4-1-2022">January 4,2022</option>
+                        <option value="5-1-2022">January 5,2022</option>
                     </select>
 
                     <select name="hour" required>

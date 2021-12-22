@@ -41,6 +41,7 @@
                         <th>Theatre</th>
                         <th>Booking date</th>
                         <th>Booking time</th>
+                        <th>Payment status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,17 @@
                                             <td><?=$row['bookingTheatre']?></td>
                                             <td><?=$row['bookingDate']?></td>
                                             <td><?=$row['bookingTime']?></td>
+                                            <?php
+                                            if ($row['paymentStatus']){
+                                                ?>
+                                                <td>Paid</td>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <td>Not pay yet</td>
+                                                <?php
+                                            }
+                                            ?>
                                         </tr>
                                         <?php
                                 }

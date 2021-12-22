@@ -864,6 +864,10 @@ footer {
     padding: 0 10px;
 }
 
+.w-60vw{
+    width: 60vw !important;
+}
+
 .admin-section-panel {
     width: 100%;
     vertical-align: middle;
