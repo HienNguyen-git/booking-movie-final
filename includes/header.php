@@ -11,7 +11,7 @@
     <div class="navbar-container">
         <nav class="navbar">
             <ul class="navbar-menu">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo "<li><a href='user_booking.php'>Your booking</a></li>";

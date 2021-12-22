@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style/login.css">
   </head>
   <body>
 
@@ -48,17 +49,16 @@
         $error = 'Can not activate your account. Please try again!';
       }
       ?>
-    <div class="container">
+    <div class="container custom-container">
       <?php
-      echo $error;
       if(!empty($error)){
         ?>
           <div class="row">
               <div class="col-md-6 mt-5 mx-auto p-3 border rounded">
                   <h4>Account Activation</h4>
                   <p class="text-danger">This is not a valid url or it has been expired.</p>
-                  <p>Click <a href="login.php">here</a> to login.</p>
-                  <a class="btn btn-success px-5" href="login.php">Login</a>
+                  <p>Click <a href="login.php">here</a> to return home page.</p>
+                  <a class="btn btn-success px-5 text-dark" href="login.php">Login</a>
               </div>
           </div>
         <?php
@@ -68,8 +68,8 @@
             <div class="col-md-6 mt-5 mx-auto p-3 border rounded">
                 <h4>Account Activation</h4>
                 <p class="text-success">Congratulations! Your account has been activated.</p>
-                <p>Click <a href="login.php">here</a> to login and manage your account information.</p>
-                <a class="btn btn-success px-5" href="login.php">Login</a>
+                <p>Click the button below to login or click<a href="login.php">here</a> to return home page.</p>
+                <a class="btn btn-success px-5 text-dark" href="login.php">Login</a>
             </div>
           </div>
         <?php
