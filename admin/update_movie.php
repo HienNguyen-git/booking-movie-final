@@ -32,7 +32,7 @@
     $movieActors = $input->movieActors;
     $ticketPrice = $input->ticketPrice;
 
-    $sql = 'update movietable set movieTitle=?, movieGenre=?, movieDuration=?, movieRelDate=?, movieDirector=?,movieActors=?, ticketPrice=? where movieID=?';
+    $sql = 'update movieTable set movieTitle=?, movieGenre=?, movieDuration=?, movieRelDate=?, movieDirector=?,movieActors=?, ticketPrice=? where movieID=?';
     $conn = open_database();
 
     $stm = $conn->prepare($sql);

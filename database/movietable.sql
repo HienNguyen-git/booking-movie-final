@@ -50,7 +50,7 @@ INSERT INTO `movieTable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `mo
 (26, 'img/movie-poster-4.jpg', 'Black Panther', 'Action, Adventure', 190, '2021-03-14', 'Marvel', 'Chadwick BoseMan, Michael Jordan B', 35000),
 (27, 'img/movie-poster-5.jpg', 'Guardians of Galaxy', 'Action, Crime', 200, '2021-03-11', 'Marvel', 'Josh Brolyn, Diane Lane', 40000),
 (28, 'img/movie-poster-6.jpg', 'Captain Marvel', 'Action, Adventure', 250, '2021-03-20', 'Marvel', 'Brie Larson, Samuel L Jackson', 35000);
-
+  
 --
 -- Indexes for dumped tables
 --
