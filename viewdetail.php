@@ -63,11 +63,11 @@
                         <td class="book-ticker-container">
                             </td>
                         </tr>
-                    </table>
-                </div>
-                <div class="book-ticket-btn-container">
-                    <a class="book-ticket-btn" href="booking.php?id='<?=$id?>'"><i class="fas fa-ticket-alt"></i> Book now</a>
-                </div>
+                </table>
+            </div>
+            <div class="book-ticket-btn-container">
+                <a class="book-ticket-btn" href="booking.php?id='<?=$id?>'"><i class="fas fa-ticket-alt"></i> Book now</a>
+            </div>
         </div>
     </div>
     <script src="scripts/jquery-3.3.1.min.js "></script>
