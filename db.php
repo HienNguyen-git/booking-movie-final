@@ -251,44 +251,63 @@
         return array('code'=>0,'success'=>'Password has changed');
     }
 
-    function add_product($name,$price,$description,$image){
-        $sql = 'insert into product(name, price, description, image) values(?,?,?,?)';
+    function get_movie_by_id($id){
+        $sql = "SELECT * FROM movieTable WHERE movieID = ?";
         $conn = open_database();
 
         $stm = $conn->prepare($sql);
-        $stm->bind_param('ssss',$name,$price,$description,$image);
+        $stm->bind_param('i',$id);
 
         if(!$stm->execute()){
-            return array('code'=>1,'error'=>'Can not execute command');
+            return array('code'=>1,'error'=>'Command not execute');
         }
-        return array('code'=>0,'success'=>'Add product successfully!');
+
+        $result = $stm->get_result();
+        if($result->num_rows==0){
+            return array('code'=>2,'error'=>'Data is empty');
+        }
+        $data = $result->fetch_assoc();
+
+        return array('code'=>0,'data'=>$data);
     }
 
-    function delete_product($name){
-        $sql = 'delete from product where name=?';
-
+    function get_user_bookings($user){
+        $sql = "SELECT * FROM bookingTable where bookingPNumber = (select sdt from account WHERE username= ?)";
         $conn = open_database();
+
+        $stm = $conn->prepare($sql);
+        $stm->bind_param('s',$user);
+
+        if(!$stm->execute()){
+            return array('code'=>1,'error'=>'Command not execute');
+        }
+
+        $result = $stm->get_result();
+        if($result->num_rows==0){
+            return array('code'=>2,'error'=>'Data is empty');
+        }
+        $data = $result->fetch_assoc();
+
+        return array('code'=>0,'data'=>$data);
+    }
+
+    function get_hall_by_name($name){
+        $sql = "SELECT * FROM hall where name=?";
+        $conn = open_database();
+
         $stm = $conn->prepare($sql);
         $stm->bind_param('s',$name);
 
         if(!$stm->execute()){
-            return array('code'=>1,'error'=>'Cannot execute command');
+            return array('code'=>1,'error'=>'Command not execute');
         }
 
-        return array('code'=>0,'success'=>'Delete product successfully');
-    }
-
-    function update_product($name,$price,$description,$image,$id){
-        echo $name,$price,$description,$image,$id;
-        $sql = 'update product set name=?, price=?, description=?, image=? where id=?';
-        $conn = open_database();
-        $stm = $conn->prepare($sql);
-        $stm->bind_param('ssssi',$name,$price,$description,$image,$id);
-        
-        if(!$stm->execute()){
-            return array('code'=>1,'error'=>'Can not execute command');
+        $result = $stm->get_result();
+        if($result->num_rows==0){
+            return array('code'=>2,'error'=>'Data is empty');
         }
-        echo 'success';
-        return array('code'=>0,'success'=>'Update product successfully!');
+        $data = $result->fetch_assoc();
+
+        return array('code'=>0,'data'=>$data);
     }
 ?>

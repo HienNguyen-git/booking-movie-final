@@ -66,10 +66,6 @@ CREATE TABLE `bookingTable` (
   `paymentStatus` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `bookingTable`
---
-
 -- --------------------------------------------------------
 
 --
