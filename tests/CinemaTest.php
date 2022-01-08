@@ -5,8 +5,6 @@ use PHPUnit\Framework\TestCase;
 require_once('db.php');
 class CinemaTest extends TestCase{
     public function testLoginTrue(){
-        // $cinema = new App\Cinema;
-        // $result = $cinema->login('tronghien123654@gmail.com','123456');
         $result = login('tronghien','123456');
         $expect = array('code'=>0,'success'=>'');
         $this->assertEquals($expect['code'],$result['code']);
