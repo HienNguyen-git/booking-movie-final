@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2021 at 05:58 PM
+-- Generation Time: Dec 22, 2021 at 04:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -45,6 +45,7 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`username`, `firstname`, `lastname`, `email`, `sdt`, `password`, `activated`, `activate_token`) VALUES
 ('haidang', 'Nguyen', 'Dang', 'nchdang16012001@gmail.com', '0395675163', '$2y$10$uyeioFcmRWB2t9ss41t9R.k4/CiEBHpaQTkgMzRpPfrOVHHCHbOjq', b'1', ''),
+('tronghien', 'Nguyen', 'Hien', 'tronghien123654@gmail.com', '0949993438', '$2y$10$UA6d8dqFhh5T1WWWNZGeDetmVrMw8rGwndxxQijdKfBdte8z4l9wm', b'1', '123456'),
 ('tronghien0403', 'Trong', 'Hien', 'incognito.designoop@gmail.com', '0913546545', '$2y$10$GnjHVHKq8o6IvvZHb7zUU.3/rd4xITyk3xz78PdXnyjbeiC2qR87y', b'1', '');
 
 -- --------------------------------------------------------
@@ -68,9 +69,6 @@ CREATE TABLE `bookingTable` (
 --
 -- Dumping data for table `bookingTable`
 --
-
-INSERT INTO `bookingTable` (`bookingID`, `movieName`, `bookingTheatre`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`, `paymentStatus`) VALUES
-(36, 'Spider Man Far From Home', 'Hall Premium', '2-1-2022', '18-00', 'Nguyen', 'Hien', '0949993438', 1);
 
 -- --------------------------------------------------------
 
@@ -118,11 +116,7 @@ CREATE TABLE `hall` (
 INSERT INTO `hall` (`id`, `name`, `chairs`) VALUES
 (0, 'Main Hall', 100),
 (1, 'VIP Halll', 200),
-(2, 'Hall Premium', 10),
-(3, 'A Hall', 120),
-(4, 'B Hall', 100),
-(5, 'C Hall', 50),
-(6, 'D Hall', 500);
+(2, 'Hall Premium', 10);
 
 -- --------------------------------------------------------
 
@@ -147,17 +141,13 @@ CREATE TABLE `movieTable` (
 --
 
 INSERT INTO `movieTable` (`movieID`, `movieImg`, `movieTitle`, `movieGenre`, `movieDuration`, `movieRelDate`, `movieDirector`, `movieActors`, `ticketPrice`) VALUES
-(1, 'img/movie-poster-1.jpg', 'Captain Marvel', ' Action, Adventure, Sci-Fi ', 220, '2018-10-18', 'Anna Boden, Ryan Fleck', 'Brie Larson, Samuel L. Jackson, Ben Mendelsohn', 90000),
-(2, 'img/movie-poster-2.jpg', 'Qarmat Bitamrmat  ', 'Comedy', 110, '2018-10-18', 'Assad Fouladkar', 'Ahmed Adam, Bayyumy Fouad, Salah Abdullah , Entsar, Dina Fouad ', 85000),
-(3, 'img/movie-poster-3.jpg', 'The Lego Movie', 'Animation, Action, Adventure', 110, '2014-02-07', 'Phil Lord, Christopher Miller', 'Chris Pratt, Will Ferrell, Elizabeth Banks', 95000),
-(4, 'img/movie-poster-4.jpg', 'Nadi Elregal Elserri ', 'Comedy', 105, '2019-01-23', ' Ayman Uttar', 'Karim Abdul Aziz, Ghada Adel, Maged El Kedwany, Nesreen Tafesh, Bayyumy Fouad, Moataz El Tony ', 86000),
-(5, 'img/movie-poster-5.jpg', 'VICE', 'Biography, Comedy, Drama', 132, '2018-12-25', 'Adam McKay', 'Christian Bale, Amy Adams, Steve Carell', 45000),
-(6, 'img/movie-poster-6.jpg', 'The Vanishing', 'Crime, Mystery, Thriller', 107, '2019-01-04', 'Kristoffer Nyholm', 'Gerard Butler, Peter Mullan, Connor Swindells', 50000),
-(18, 'img/movie-poster-7.png', 'Endgame', 'Action', 200, '2021-12-22', 'Marvel', 'Iron Man', 75000),
-(19, 'img/images.png', 'Spider Man Far From Home', 'superhero', 180, '2021-12-13', 'Marvel', 'tom holland', 120000),
-(20, 'img/movie-poster-8.png', 'Hawkeyeee', 'Actioneee', 220, '2021-12-14', 'Marveleee', 'Hawkeyeee', 60000),
-(22, 'img/movie-poster-9.jpg', 'The Conjuring: The Devil Made Me Do It', 'Horror/Thriller', 250, '2021-12-22', 'Michael Chaves', 'Dang gay', NULL);
-
+(23, 'img/movie-poster-1.jpg', 'Hawkeye', 'Action, Scienfic', 180, '2021-03-23', 'Marvel', 'Jeremy Renner, Troy Baker, Tody Diniel', 30000),
+(24, 'img/movie-poster-2.jpg', 'Ant Man', 'Action, Comedy', 200, '2021-03-02', 'Marvel', 'Paul Rudd, Stan Lee, T.I', 20000),
+(25, 'img/movie-poster-3.jpg', 'Shang-Chi', 'Superhero', 250, '2021-03-09', 'Marvel', 'Simu Liu, Awkquafina, Fala Chen', 25000),
+(26, 'img/movie-poster-4.jpg', 'Black Panther', 'Action, Adventure', 190, '2021-03-14', 'Marvel', 'Chadwick BoseMan, Michael Jordan B', 35000),
+(27, 'img/movie-poster-5.jpg', 'Guardians of Galaxy', 'Action, Crime', 200, '2021-03-11', 'Marvel', 'Josh Brolyn, Diane Lane', 40000),
+(28, 'img/movie-poster-6.jpg', 'Captain Marvel', 'Action, Adventure', 250, '2021-03-20', 'Marvel', 'Brie Larson, Samuel L Jackson', 35000);
+  
 -- --------------------------------------------------------
 
 --
@@ -205,7 +195,7 @@ ALTER TABLE `reset_token`
 -- AUTO_INCREMENT for table `bookingTable`
 --
 ALTER TABLE `bookingTable`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `movieTable`
